@@ -30,12 +30,12 @@ func init() {
 
 func main() {
     slog.Warn("This is a warning!")
-    FatalError("This will log and then exit with status 1")
+    FatalError("log and exit with status 1")
 }
 ```
 
 Output:
 ```
 {"timestamp":"2023-01-01T01:01:01.000000+00:00","level":"WARN","msg":"This is a warning!"}
-{"timestamp":"2023-01-01T01:01:01.000000+00:00","level":"ERROR","msg":"This will log and then exit with status 1"}
+{"timestamp":"2023-01-01T01:01:01.000000+00:00","level":"ERROR","msg":"log and exit with status 1"}
 ```
