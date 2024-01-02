@@ -39,7 +39,7 @@ func (b *batch) Len() int {
 }
 
 func (b *batch) Less(i, j int) bool {
-	return *b.logEvents[i].Timestamp < *b.logEvents[j].Timestamp
+	return (*b.logEvents[i].Timestamp < *b.logEvents[j].Timestamp) || ((*b.logEvents[i].Timestamp == *b.logEvents[j].Timestamp) && (*b.logEvents[i].Message < *b.logEvents[j].Message))
 }
 
 func (b *batch) Swap(i, j int) {
