@@ -1,4 +1,4 @@
-package slog_lambda
+package slog_aws
 
 import (
 	"log/slog"
@@ -8,11 +8,6 @@ import (
 var (
 	AwsLambdaLogLevel slog.Level
 )
-
-func FatalError(s string, v ...any) {
-	slog.Error(s, v...)
-	os.Exit(1)
-}
 
 func LambdaLogger() *slog.Logger {
 	err := AwsLambdaLogLevel.UnmarshalText([]byte(
