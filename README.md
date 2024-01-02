@@ -19,20 +19,23 @@ AWS Lambda supports advanced logging controls[1] that help you manage how your f
 package main
 
 import (
-	. "github.com/brightbock/slog-lambda"
+	"github.com/brightbock/slogcloud"
+	. "github.com/brightbock/slogcloud/helpers"
 	"log/slog"
 )
 
 func init() {
-	slog.SetDefault(LambdaLogger())
+	slog.SetDefault(slogcloud.LambdaLogger())
 }
 
 func main() {
 	slog.Warn("This is a warning!")
+    FatalError("This will log and then exit with status 1")
 }
 ```
 
 Output:
 ```
-{"timestamp":"2023-01-23T01:23:45.123456+00:00","level":"WARN","msg":"This is a warning!"}
+{"timestamp":"2023-01-01T01:01:01.000000+00:00","level":"WARN","msg":"This is a warning!"}
+{"timestamp":"2023-01-01T01:01:01.000000+00:00","level":"ERROR","msg":"This will log and then exit with status 1"}
 ```
