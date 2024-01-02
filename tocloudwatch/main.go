@@ -68,7 +68,6 @@ func LogToCloudwatch(config *Config) error {
 	originalCloser := config.Closer
 	config.Closer = func() {
 		defer originalCloser()
-		time.Sleep(1 * time.Second)
 		slog.Debug("Closing Cloudwatch Logging Handle")
 		logger := jsonlogger.Logger(
 			os.Stdout,
