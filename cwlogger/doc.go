@@ -1,7 +1,7 @@
 // Package cwlogger is a library for reliably writing logs to Amazon CloudWatch
 // Logs.
 //
-// Features
+// # Features
 //
 // Batches log messages for efficiency by decreasing the number of API calls.
 //
@@ -19,20 +19,20 @@
 // Retries PutLogEvents API calls in case of connection failure, or temporary
 // errors on CloudWatch Logs.
 //
-// Dependencies
+// # Dependencies
 //
 // The only dependency for this package is the official AWS SDK for Go.
 //
-// Usage
+// # Usage
 //
 // Use the AWS SDK for Go to configure and create the client.
 //
-//   logger, err := cwlogger.New(&cwlogger.Config{
-//     LogGroupName: "groupName",
-//     Client: cloudwatchlogs.New(session.New())
-//   })
-//   // handle err
-//   logger.Log(time.Now(), "log message")
+//	logger, err := cwlogger.New(&cwlogger.Config{
+//	  LogGroupName: "groupName",
+//	  Client: cloudwatchlogs.New(session.New())
+//	})
+//	// handle err
+//	logger.Log(time.Now(), "log message")
 //
 // For information on how to configure the AWS client, refer to the AWS
 // documentation at http://docs.aws.amazon.com/sdk-for-go/api/aws/session/.
