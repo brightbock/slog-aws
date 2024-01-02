@@ -1,4 +1,4 @@
-module github.com/brightbock/slog-lambda/cwlogger
+module github.com/brightbock/slogcloud/cwlogger
 
 go 1.19
 

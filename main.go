@@ -1,4 +1,4 @@
-package slog_aws
+package slogcloud
 
 import (
 	"log/slog"
